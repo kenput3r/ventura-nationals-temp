@@ -37,11 +37,12 @@ const Layout = ({ children }) => {
         <footer
           style={{
             marginTop: `2rem`,
+            fontFamily: `var(--font-asto)`,
+            fontSize: `1.2rem`,
+            textAlign: `center`
           }}
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          © {new Date().getFullYear()} Ventura Nationals
         </footer>
       </div>
     </>

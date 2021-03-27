@@ -1,4 +1,10 @@
+@import url("https://use.typekit.net/iix1iyf.css");
+:root {
+  --font-asto: astounder-squared-bb, sans-serif;
+  --color-red: #cd5d45;
+}
 html {
+  background-color: #000000;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font: 112.5%/1.45em georgia, serif, sans-serif;
@@ -6,10 +12,11 @@ html {
   overflow-y: scroll;
 }
 body {
+  background-color: #000000;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
+  color: #ffffff;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;

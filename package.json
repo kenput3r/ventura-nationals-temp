@@ -1,10 +1,13 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ventura-nationals-temp",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple temporary website powered by Gatsby.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kenneth Lyerly <kenput3r@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "components": "^0.1.0",
+    "dotenv": "^8.2.0",
     "gatsby": "^3.1.2",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-image": "^1.1.2",
@@ -12,14 +15,20 @@
     "gatsby-plugin-offline": "^4.1.0",
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sharp": "^3.1.2",
+    "gatsby-plugin-styled-components": "^4.1.0",
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-sharp": "^3.1.0",
+    "http-proxy-middleware": "^1.0.6",
+    "node-fetch": "^2.6.1",
+    "npm-run-all": "^4.1.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "netlify-lambda": "^2.0.3",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -27,10 +36,14 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && netlify-lambda build src/serverless",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/serverless",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "run-p start:**",
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/serverless",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
